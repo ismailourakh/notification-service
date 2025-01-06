@@ -16,13 +16,22 @@ public class NotificationController {
         this.notificationService = notificationService;
     }
 
+    // Endpoint pour créer une notification et la sauvegarder dans la base de données
     @PostMapping
     public Notification createNotification(@RequestBody Notification notification) {
         return notificationService.saveNotification(notification);
     }
 
+    // Endpoint pour récupérer toutes les notifications
     @GetMapping
     public List<Notification> getNotifications() {
         return notificationService.getAllNotifications();
+    }
+
+    // Endpoint pour envoyer une notification au service d'authentification
+    @PostMapping("/send")
+    public String sendNotification(@RequestParam String userId, @RequestParam String message) {
+        notificationService.notifyAuthenticationService(userId, message);
+        return "Notification envoyée au service Authentification";
     }
 }
