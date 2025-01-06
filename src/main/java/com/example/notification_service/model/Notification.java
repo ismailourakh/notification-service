@@ -10,12 +10,14 @@ public class Notification {
     private Long id;
 
     private String userId;
+    private String email; // Nouveau champ
     private String message;
 
     public Notification() {}
 
-    public Notification(String userId, String message) {
+    public Notification(String userId, String email, String message) {
         this.userId = userId;
+        this.email = email;
         this.message = message;
     }
 
@@ -34,6 +36,14 @@ public class Notification {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMessage() {
