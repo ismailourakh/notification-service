@@ -15,6 +15,7 @@ public class NotificationServiceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		// Logique de démarrage de l'application ici si nécessaire
 		System.out.println("Notification Service démarré avec succès !");
 	}
 }
